@@ -1,0 +1,18 @@
+[BBOmix]
+Copyright [2026] [Luca Thale-Bombien & Jan Ewald & Ralf König & Aaron Klein]
+
+This product includes code from the following third-party projects,
+each licensed under the Apache License, Version 2.0:
+
+--------------------------------------------------------------------
+[Syne Tune]
+Copyright [2021] [Copyright Amazon.com, Inc. or its affiliates]
+[https://github.com/syne-tune/syne-tune/tree/main]
+--------------------------------------------------------------------
+[Autoencodix]
+Copyright [2024] [Maximilian Josef Joas & Jan Ewald, ScaDS.AI, Leipzig University]
+[https://github.com/jan-forest/autoencodix_package]
+--------------------------------------------------------------------
+
+You may obtain a copy of the Apache License, Version 2.0 at:
+http://www.apache.org/licenses/LICENSE-2.0
