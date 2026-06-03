@@ -1,0 +1,16 @@
+dataset: schc
+
+modalities:
+  - RNA
+  - METH
+  - CLIN
+
+tasks:
+  - author_cell_type
+  - age_group
+  - sex
+
+paths:
+  METH: "/data/horse/ws/luth474h-autoencodix_synetune/data/scATAC_human_cortex_formatted.parquet"
+  RNA:  "/data/horse/ws/luth474h-autoencodix_synetune/data/scRNA_human_cortex_formatted.parquet"
+  CLIN: "/data/horse/ws/luth474h-autoencodix_synetune/data/scATAC_human_cortex_clinical_formatted.parquet"

@@ -1,0 +1,13 @@
+.DS_Store
+.coverage
+.coverage.*
+coverage.xml
+.pytest_cache/
+*__pycache__
+*.egg-info
+.idea
+.vscode
+std.out
+docs/build/*
+docs/source/_apidoc/*
+docs/source/notebooks/*

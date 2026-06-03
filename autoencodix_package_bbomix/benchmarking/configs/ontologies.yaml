@@ -1,0 +1,18 @@
+tcga:
+  chromosome:
+    paths:
+      lvl1: "chromosome_ont_lvl2.txt"
+      lvl2: "chromosome_ont_lvl1_ncbi.txt"
+  reactome:
+    paths:
+      lvl1: "full_ont_lvl2_reactome.txt"
+      lvl2: "full_ont_lvl1_reactome.txt"
+schc:
+    chromosome:
+        paths:
+          lvl1: "chromosome_ont_lvl2.txt"
+          lvl2: "chromosome_ont_lvl1_ensembl.txt"
+    reactome:
+        paths:
+          lvl1: "full_ont_lvl2_reactome.txt"
+          lvl2: "full_ont_lvl1_ensembl_reactome.txt"

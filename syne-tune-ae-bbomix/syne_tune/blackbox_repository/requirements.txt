@@ -1,0 +1,13 @@
+numpy>=1.16.0, <1.27.0
+pandas
+
+# required for surrogates
+scikit-learn
+xgboost
+
+# required to load datasets
+fastparquet
+h5py # note: only needed for fcnet for high compression
+
+# required to download datasets
+huggingface_hub

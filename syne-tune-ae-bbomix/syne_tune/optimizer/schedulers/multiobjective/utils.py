@@ -1,0 +1,83 @@
+import logging
+import numpy as np
+
+try:
+    from pymoo.indicators.hv import HV
+except ImportError as e:
+    logging.debug(e)
+
+
+EPSILON = 1e-6
+
+
+def default_reference_point(results_array: np.ndarray) -> np.ndarray:
+    return results_array.max(axis=0) * (1 + EPSILON) + EPSILON
+
+
+def hypervolume(
+    results_array: np.ndarray,
+    reference_point: np.ndarray = None,
+) -> float:
+    """
+    Compute the hypervolume of all results based on reference points
+
+    :param results_array: Array with experiment results ordered by time with
+        shape ``(npoints, ndimensions)``.
+    :param reference_point: Reference points for hypervolume calculations.
+        If ``None``, the maximum values of each dimension of results_array is
+        used.
+    :return Hypervolume indicator
+    """
+    if reference_point is None:
+        reference_point = default_reference_point(results_array)
+    indicator_fn = HV(ref_point=reference_point)
+    return indicator_fn(results_array)
+
+
+def linear_interpolate(hv_indicator: np.ndarray, indices: list[int]):
+    for first, last in zip(indices[:-1], indices[1:]):
+        num = last - first + 1
+        v_first = hv_indicator[first]
+        v_last = hv_indicator[last]
+        hv_indicator[first : (last + 1)] = np.linspace(v_first, v_last, num=num)
+
+
+# TODO: Use code for incremental hypervolume (adding one more point). Computation
+# here can be slow.
+# At least we could check for each new row if it is dominated by rows before. If
+# so, the cumulative indicator remains the same.
+def hypervolume_cumulative(
+    results_array: np.ndarray,
+    reference_point: np.ndarray = None,
+    increment: int = 1,
+) -> np.ndarray:
+    """
+    Compute the cumulative hypervolume of all results based on reference points
+    Returns an array with hypervolumes given by an increasing range of points.
+    ``return_array[idx] = hypervolume(results_array[0 : (idx + 1)])``.
+
+    The current implementation is very slow, since the hypervolume index is not
+    computed incrementally. A solution for now is to use ``increment > 1``,
+    in which case the HV index is only computed every ``increment`` entry, and
+    linearly interpolated in between.
+
+    :param results_array: Array with experiment results ordered by time with
+        shape ``(npoints, ndimensions)``.
+    :param reference_point: Reference points for hypervolume calculations.
+        If ``None``, the maximum values of each dimension of results_array is
+        used.
+    :return: Cumulative hypervolume array, shape ``(npoints,)``
+    """
+    if reference_point is None:
+        reference_point = default_reference_point(results_array)
+    indicator_fn = HV(ref_point=reference_point)
+    hypervolume_indicator = np.zeros(shape=len(results_array))
+    sz = len(results_array)
+    indices = list(range(0, sz, increment))
+    if indices[-1] != sz - 1:
+        indices.append(sz - 1)
+    for idx in indices:
+        hypervolume_indicator[idx] = indicator_fn(results_array[0 : (idx + 1)])
+    if increment > 1:
+        linear_interpolate(hypervolume_indicator, indices)
+    return hypervolume_indicator

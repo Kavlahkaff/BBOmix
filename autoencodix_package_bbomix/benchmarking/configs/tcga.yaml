@@ -1,0 +1,24 @@
+dataset: tcga
+
+modalities:
+  - RNA
+  - METH
+  - DNA
+  - CLIN
+
+tasks:
+  - CANCER_TYPE
+  - SUBTYPE
+  - ONCOTREE_CODE
+  - SEX
+  - AJCC_PATHOLOGIC_TUMOR_STAGE
+  - GRADE
+  - PATH_N_STAGE
+  - DSS_STATUS
+  - OS_STATUS
+
+paths:
+  METH: "/data/horse/ws/luth474h-autoencodix_synetune/data/data_methylation_per_gene_formatted.parquet"
+  RNA:  "/data/horse/ws/luth474h-autoencodix_synetune/data/data_mrna_seq_v2_rsem_formatted.parquet"
+  DNA:  "/data/horse/ws/luth474h-autoencodix_synetune/data/data_combi_MUT_CNA_formatted.parquet"
+  CLIN: "/data/horse/ws/luth474h-autoencodix_synetune/data/data_clinical_formatted.parquet"

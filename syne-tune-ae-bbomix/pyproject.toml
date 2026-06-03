@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syne-tune"
+dynamic = ["version"]
+description = "A Hyperparameter Optimization Library"
+readme = "README.md"
+authors = [{name = "Syne Tune Developers"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.8",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26.0, <3.0.0",
+    "dill>=0.3.6",
+    "pandas",
+    "typing_extensions",
+    "sortedcontainers",
+    "statsmodels",
+    "scikit-learn",
+    "xgboost",
+    "tqdm",
+    "huggingface-hub>=1.7.1",
+    "fastparquet>=2025.12.0",
+    "matplotlib>=3.10.8",
+    "pyparfor>=0.0.1",
+    "pytest>=9.0.2",
+    "seaborn>=0.13.2",
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest",
+    "pytest-cov~=4.1.0",
+    "pytest-timeout",
+    "black==22.3.0",
+    "flake8",
+    "sphinx<8.0.0",
+    "nbsphinx",
+    "ipykernel",
+    "pypandoc_binary",
+    "sphinx-rtd-theme",
+    "sphinx-autodoc-typehints",
+    "traitlets<=5.11.2",
+    "myst-parser",
+    "sphinx_copybutton",
+    "sphinxcontrib-bibtex",
+    "sphinxcontrib.jquery",
+    "wheel",
+]
+extra = [
+    "syne-tune[dev]",
+    # blackbox repository
+    "fastparquet",
+    "h5py",
+    "huggingface_hub",
+    # botorch
+    "botorch>=0.7.2",
+    # smac
+    "swig",
+    "smac>=2.0",
+    # moo
+    "pymoo>=0.6.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/syne-tune/syne-tune"
+"Bug Tracker" = "https://github.com/syne-tune/syne-tune/issues"
+
+[tool.setuptools.packages.find]
+include = ["syne_tune", "syne_tune.*"]
+exclude = []
+
+[tool.setuptools.dynamic]
+version = {attr = "syne_tune.read_version"}

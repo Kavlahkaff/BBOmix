@@ -1,0 +1,19 @@
+fixed:
+  epochs: 300
+  checkpoint_interval: 300
+  loss_reduction: "sum"
+
+search:
+  k_filter: [128, 256, 512, 1024, 2048, 4096]
+  n_layers: [2, 3, 4]
+  enc_factor: [1, 2, 3, 4]
+  latent_dim: [2, 4, 8, 16, 32, 64]
+  batch_size: [32, 64, 128, 256]
+  #   log-uniform ranges: [min, max]
+  learning_rate: [1.0e-5, 1.0e-1]
+  weight_decay: [1.0e-5, 1.0e-1]
+  beta: [0.0001, 1.0]
+  beta_mi: [0.0001,1.0]
+  beta_tc: [0.01,1000]
+  beta_dimKL: [0.0001, 1.0]
+  drop_p: [0.0, 0.9]
