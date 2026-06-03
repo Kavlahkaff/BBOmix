@@ -1,5 +1,30 @@
-# BBOmix End-to-End Reproducibility Guide
+# Notice
 
+> **Notice:** This repository contains the exact code, scripts, and data files used for the reproducibility of our paper submission. It serves as a static archive to ensure scientific transparency and **is not actively maintained**.
+---
+
+### 📊 Data & Active Maintenance
+
+* **Active Repositories:** All maintained code, updates, and extended documentation can be found at **[Syne Tune](https://github.com/syne-tune/syne-tune)** and **[Autoencodix](https://github.com/jan-forest/autoencodix_package)**.
+* **Data Access:** The complete, Syne Tune compatible blackboxes are hosted and accessible via **[Hugging Face](https://huggingface.co/datasets/synetune/blackbox-repository)**.
+* **Raw Data** The raw experiment data stored as JSON files is available via **[Figshare](https://figshare.com/s/c9da074d5c0b371ea3bd?file=64553808)**. 
+
+If you are looking to build upon this work or use the dataset for your own projects, we highly recommend cloning or forking the maintained repositories instead of this archive.
+
+---
+
+### 🔬 Citation
+If you use the code or data from this reproducibility package in your research, please cite our paper:
+
+```bibtex
+@article{thale2026,
+  author    = {Thale-Bombien, Luca and Ewald, Jan and Koenig, Ralf and Klein, Aaron},
+  title     = {BBOmix: A Tabular Benchmark for Hyperparameter Optimization of Unsupervised Biological Representation Learning},
+  journal   = {arXiv preprint arXiv:},
+  year      = {2026}
+```
+
+## # BBOmix End-to-End Reproducibility Guide
 This meta-guide provides complete instructions to reproduce the experiments for the BBOmix benchmark paper. The pipeline is divided into two distinct phases, corresponding to the two codebases used in the project:
 
 1. **Phase 1: Autoencodix** - Generating the raw experiment data by training autoencoders across various datasets, architectures, and modalities.
@@ -12,9 +37,7 @@ The provided `.zip` archive contains the following components to facilitate the 
 - `META_REPRODUCIBILITY_GUIDE.md` (this file): The end-to-end instructions for reproducing the paper's results. Note, that both provided repositories contain further instructions, if needed.
 - `autoencodix.zip`: The source code repository for the Autoencodix package, used to train the models and generate the benchmark (Phase 1).
 - `syne-tune.zip`: The source code repository for the Syne Tune framework, tailored for BBOmix HPO evaluation (Phase 2).
-- **Raw HPO Experiment Data**: Can be downloaded from this HuggingFace repository: .
-- **Syne Tune Blackboxes**: Can be downloaded from this Huggingface repository: .
-
+- **Raw HPO Experiment Data and Syne Tune Blackboxes**: Can be downloaded from via figshare, see above.
 ---
 
 ## Phase 1: Autoencodix (Data Generation)
