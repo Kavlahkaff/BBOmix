@@ -1,6 +1,6 @@
 # Notice
 
-> **Notice:** This repository contains the exact code, scripts, and data files used for the reproducibility of our paper submission. It serves as a static archive to ensure scientific transparency and **is not actively maintained**.
+> **Notice:** This repository contains the exact code and scripts necessary to reproduce our paper submission and links to result data on figshare. It serves as a static archive to ensure scientific transparency and **is not actively maintained**.
 ---
 
 ### 📊 Data & Active Maintenance
