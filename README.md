@@ -17,11 +17,15 @@ If you are looking to build upon this work or use the dataset for your own proje
 If you use the code or data from this reproducibility package in your research, please cite our paper:
 
 ```bibtex
-@article{thale2026,
-  author    = {Thale-Bombien, Luca and Ewald, Jan and Koenig, Ralf and Klein, Aaron},
-  title     = {BBOmix: A Tabular Benchmark for Hyperparameter Optimization of Unsupervised Biological Representation Learning},
-  journal   = {arXiv preprint arXiv:},
-  year      = {2026}
+@misc{thalebombien2026bbomixtabularbenchmarkhyperparameter,
+      title={BBOmix: A Tabular Benchmark for Hyperparameter Optimization of Unsupervised Biological Representation Learning}, 
+      author={Luca Thale-Bombien and Jan Ewald and Ralf König and Aaron Klein},
+      year={2026},
+      eprint={2606.05139},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2606.05139}, 
+}
 ```
 
 ## # BBOmix End-to-End Reproducibility Guide
