@@ -7,7 +7,7 @@
 
 * **Active Repositories:** All maintained code, updates, and extended documentation can be found at **[Syne Tune](https://github.com/syne-tune/syne-tune)** and **[Autoencodix](https://github.com/jan-forest/autoencodix_package)**.
 * **Data Access:** The complete, Syne Tune compatible blackboxes are hosted and accessible via **[Hugging Face](https://huggingface.co/datasets/synetune/blackbox-repository)**.
-* **Raw Data** The raw experiment data stored as JSON files is available via **[Figshare](https://figshare.com/s/c9da074d5c0b371ea3bd?file=64553808)**. 
+* **Raw Data** The raw experiment data stored as JSON files on **[Hugging Face](https://huggingface.co/datasets/autoencodix/BBOmix)**. 
 
 If you are looking to build upon this work or use the dataset for your own projects, we highly recommend cloning or forking the maintained repositories instead of this archive.
 
