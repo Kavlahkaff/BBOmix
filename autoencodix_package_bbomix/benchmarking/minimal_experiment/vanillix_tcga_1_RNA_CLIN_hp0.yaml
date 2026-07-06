@@ -1,0 +1,21 @@
+run_id: vanillix_tcga_1_RNA_CLIN_hp0
+architecture: vanillix
+dataset: tcga
+modalities:
+- RNA
+- CLIN
+ontology: null
+seed: 1
+hp_index: 0
+hyperparameters:
+  epochs: 300
+  checkpoint_interval: 300
+  loss_reduction: sum
+  k_filter: 4096
+  n_layers: 2
+  enc_factor: 1
+  learning_rate: 0.009251283695699343
+  weight_decay: 9.54041826560807e-05
+  batch_size: 64
+  drop_p: 0.6628240927476112
+  latent_dim: 64

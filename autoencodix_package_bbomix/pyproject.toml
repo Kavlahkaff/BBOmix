@@ -34,6 +34,7 @@ dependencies = [
     "ipywidgets>=8.1.7",
     "mistralai>=1.9.11",
     "ollama>=0.6.1",
+    "python-dotenv>=1.0.0",
 ]
 
 [dependency-groups]

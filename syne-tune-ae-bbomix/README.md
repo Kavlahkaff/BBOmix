@@ -188,7 +188,7 @@ for iteration in range(max_iterations):
 
 ## Benchmarking
 
-Checkout this tutorial to run large-scale [benchmarking](benchmarking/nursery/) with Syne Tune.
+Checkout this tutorial to run large-scale [benchmarking](benchmarking/) with Syne Tune.
 
 ## Optuna
 

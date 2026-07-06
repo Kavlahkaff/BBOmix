@@ -163,7 +163,7 @@ def run_job(config_path):
     }[job["dataset"]]
 
     logger.info("Starting evaluation")
-    avg, rec, loss_per_epoch = evaluate(model, tasks, get_epochs())
+    avg, per_task, rec, loss_per_epoch = evaluate(model, tasks, get_epochs())
     logger.info("Evaluation finished (runtime %.2f sec)", runtime_sec)
 
     # 6. Save Results
@@ -176,6 +176,7 @@ def run_job(config_path):
         "ONTOLOGY": job.get("ontology", "N/A"),
         "HYPERPARAMETERS": job["hyperparameters"],
         "AVG_ML_TASK_PERFORMANCE": avg,
+        "PER_TASK_PERFORMANCE": per_task,
         "VALID_RECON_LOSS": rec,
         "loss_per_epoch": loss_per_epoch,
         "RUNTIME_SECONDS": round(runtime_sec, 4),

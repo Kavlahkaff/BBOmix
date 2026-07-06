@@ -64,14 +64,6 @@ uv sync
 source .venv/bin/activate
 ```
 
-#### Using standard pip
-
-Alternatively, you can install the package using standard `pip` in your preferred virtual environment (e.g., conda or venv). From the root of the repository:
-
-```bash
-pip install -e .
-```
-
 ### Getting Started
 
 To run the benchmarking experiments, you need to configure paths to your datasets, results, and configuration directories. We use environment variables for this to prevent hardcoded absolute paths, ensuring cross-platform reproducibility.
@@ -87,6 +79,8 @@ Before running the scripts, you can optionally configure the following environme
 #### Data Download
 
 The full experiment data (datasets and ontologies) is hosted on Zenodo. We have provided a script to automatically download and extract it to your `AUTOENCODIX_DATA_DIR`.
+
+**Note:** The dataset is quite large (>3GB), so the download may take a significant amount of time depending on your network connection.
 
 ```bash
 cd benchmarking
@@ -176,19 +170,15 @@ Once the raw experiment data has been generated in Phase 1, it can be used to ru
 ### Dependencies and Installation
 
 Before running the scripts, you must install the required dependencies.
-You can install the package and its dependencies locally using `uv` or `pip`:
+You can install the package and its dependencies locally using `uv`:
 
 ```bash
-# Using uv (recommended for speed):
 uv pip install -e .
-
-# Or using pip:
-pip install -e .
 ```
 
 **Note:** If you plan to launch experiments on a compute cluster using `benchmarking/launch_slurmpilot.py`, you will also need to manually install `slurmpilot` since it is not included in the default `syne-tune` dependencies:
 ```bash
-uv pip install slurmpilot # or pip install slurmpilot
+uv pip install slurmpilot
 ```
 
 ### 1. Importing Raw Data into Blackboxes
